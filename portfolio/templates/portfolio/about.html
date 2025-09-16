@@ -1,0 +1,112 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}About — Portfolio{% endblock %}
+
+{% block content %}
+<section id="about" class="max-w-6xl mx-auto px-6 py-16">
+  <!-- Section Title -->
+  <div class="text-center mb-12" data-aos="fade-up">
+    <h2 class="text-3xl md:text-4xl font-bold text-teal-400 mb-3">About Me</h2>
+    <p class="text-slate-300 max-w-2xl mx-auto">
+      I’m a passionate <span class="text-teal-400 font-semibold">Full-Stack Developer</span> specializing in 
+      <span class="text-teal-400">Python, Django, and AI-powered solutions</span>.  
+      I love building modern, scalable, and elegant applications that make an impact.
+    </p>
+  </div>
+
+  <!-- Grid: Image + Content -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- Profile Image -->
+    <div data-aos="fade-right" class="flex justify-center">
+      {% load static %}
+      <img src="{% static 'portfolio/images/profile.jpg' %}" alt="Profile Picture"
+           class="rounded-2xl shadow-lg w-64 h-64 object-cover border-4 border-teal-500">
+    </div>
+
+    <!-- Personal Info -->
+    <div data-aos="fade-left">
+      <h3 class="text-xl font-semibold text-white mb-4">Who I Am</h3>
+      <p class="text-slate-300 mb-4">
+        Beyond coding, I enjoy solving problems, mentoring peers, and exploring emerging tech.  
+        I believe in crafting solutions that balance functionality and aesthetics.  
+        My focus is on <span class="text-teal-400">clean architecture, automation, and user-friendly designs</span>.
+      </p>
+      <ul class="space-y-2 text-slate-300">
+        <li><i class="fas fa-map-marker-alt text-teal-400 mr-2"></i> Based in the Philippines</li>
+        <li><i class="fas fa-laptop-code text-teal-400 mr-2"></i> Building AI-powered systems & web apps</li>
+        <li><i class="fas fa-users text-teal-400 mr-2"></i> Passionate about teamwork & leadership</li>
+        <li><i class="fas fa-music text-teal-400 mr-2"></i> Loves music & creative storytelling</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="mt-16" data-aos="fade-up">
+    <h3 class="text-xl font-semibold text-white mb-6 text-center">My Skills</h3>
+
+    <!-- Animation Wrapper -->
+    <div class="overflow-hidden relative">
+      <div id="skills-slider" class="flex gap-6 animate-scroll">
+        <!-- Skills will load via API -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience / Journey -->
+  <div class="mt-16" data-aos="fade-up">
+    <h3 class="text-xl font-semibold text-white mb-6 text-center">My Journey</h3>
+    <div class="space-y-6 max-w-3xl mx-auto">
+      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">2025 — Present</h4>
+        <p class="text-slate-300">Working on <strong>AI-driven applications</strong> like Dr. Tom AI & Smart POS with Gemini API.</p>
+      </div>
+      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">2024</h4>
+        <p class="text-slate-300">Developed full-stack <strong>File Management System</strong> with version control & role-based access.</p>
+      </div>
+      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">Earlier</h4>
+        <p class="text-slate-300">Hands-on experience with <strong>web development, automation, and cloud integration</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite; /* adjust speed here */
+  width: max-content;
+}
+</style>
+
+<!-- Script: Load skills dynamically -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = [
+    { name: "Python", icon: '<i class="fab fa-python text-yellow-400 text-3xl mb-2"></i>' },
+    { name: "Django", icon: '<img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" alt="Django" class="h-8 mx-auto mb-2">' },
+    { name: "JavaScript", icon: '<i class="fab fa-js-square text-yellow-400 text-3xl mb-2"></i>' },
+    { name: "PostgreSQL", icon: '<i class="fas fa-database text-blue-400 text-3xl mb-2"></i>' },
+    { name: "Docker", icon: '<i class="fab fa-docker text-blue-500 text-3xl mb-2"></i>' },
+    { name: "Cloud", icon: '<i class="fas fa-cloud text-teal-400 text-3xl mb-2"></i>' },
+    { name: "API", icon: '<i class="fas fa-plug text-purple-400 text-3xl mb-2"></i>' }
+  ];
+
+  const slider = document.getElementById("skills-slider");
+
+  // Duplicate the array for smooth infinite loop
+  const allSkills = [...skills, ...skills];
+  allSkills.forEach(skill => {
+    const div = document.createElement("div");
+    div.className = "bg-slate-800/60 p-4 rounded-xl shadow-md hover:scale-105 transition min-w-[120px] text-center";
+    div.innerHTML = `${skill.icon}<p class="text-slate-300 text-sm">${skill.name}</p>`;
+    slider.appendChild(div);
+  });
+});
+</script>
+{% endblock %}

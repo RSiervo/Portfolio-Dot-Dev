@@ -1,0 +1,217 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Home — Portfolio{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section id="home" class="hero py-24 relative overflow-hidden">
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <div class="hero-text" data-aos="fade-up">
+      
+      <!-- NAME -->
+      <h1 class="big animate__animated animate__fadeInDown 
+                 text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Hi, I'm 
+        <span class="bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 bg-clip-text text-transparent whitespace-nowrap">
+          Rostom A. Siervo
+        </span>
+      </h1>
+
+      <!-- DESCRIPTION -->
+      <p class="lead animate__animated animate__fadeInUp animate__delay-1s 
+                text-gray-300 text-base sm:text-lg md:text-xl 
+                max-w-3xl mx-auto mb-8 px-4">
+        A passionate <strong>Full-Stack Developer</strong> specializing in 
+        <span class="text-green-400">Django</span>, <span class="text-green-400">Python</span>, 
+        and <strong>modern web technologies</strong>.  
+        I craft responsive, elegant, and user-focused digital experiences.
+      </p>
+
+      <!-- CALL TO ACTION BUTTONS -->
+      <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 
+                  animate__animated animate__fadeInUp animate__delay-2s px-4">
+        <a class="flex-1 sm:flex-initial min-w-[200px] inline-flex items-center justify-center 
+                  px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 
+                  text-white font-semibold shadow-lg transition text-center"
+           href="{% url 'projects' %}">
+          <i class="fas fa-code mr-2"></i> See my projects
+        </a>
+        <a class="flex-1 sm:flex-initial min-w-[200px] inline-flex items-center justify-center 
+                  px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
+                  text-white font-semibold shadow-lg transition text-center"
+           href="{% url 'contact' %}">
+          <i class="fas fa-envelope mr-2"></i> Get in touch
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Floating background icons -->
+  <div class="absolute inset-0 flex justify-center items-center opacity-10">
+    <i class="fas fa-code text-9xl text-green-400 animate-bounce"></i>
+  </div>
+  <!-- Background Glow -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50"></div>
+</section>
+
+<!-- What I Do Section -->
+<section id="services" class="py-20 bg-gray-900 text-white">
+  <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-8 text-green-400">What I Do</h2>
+    <p class="text-gray-400 mb-12">Crafting digital experiences with passion and precision.</p>
+
+    <!-- Services Grid (Visible by Default) -->
+    <div id="service-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in">
+        <i class="fas fa-laptop-code text-4xl text-green-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
+        <p class="text-gray-300">Responsive and modern websites using Django, Python, and JavaScript.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-server text-4xl text-blue-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
+        <p class="text-gray-300">Scalable APIs and secure systems built with Django REST Framework & PostgreSQL.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-database text-4xl text-yellow-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Database Management</h3>
+        <p class="text-gray-300">Optimizing relational databases for speed, security, and performance.</p>
+      </div>
+    </div>
+
+    <!-- Hidden Extra Services -->
+    <div id="extra-services" class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 hidden">
+      <!-- Card 4 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in">
+        <i class="fas fa-cloud text-4xl text-purple-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Cloud & DevOps</h3>
+        <p class="text-gray-300">Deploying apps with Docker, Kubernetes, and CI/CD pipelines.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-robot text-4xl text-pink-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">AI & Automation</h3>
+        <p class="text-gray-300">Leveraging AI/ML and automation tools to create smart solutions.</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-mobile-alt text-4xl text-red-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Mobile-Friendly Apps</h3>
+        <p class="text-gray-300">Crafting responsive apps optimized for mobile experiences.</p>
+      </div>
+    </div>
+
+    <!-- Show More Button -->
+    <div class="mt-10">
+      <button id="show-more-btn" 
+        class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:scale-105">
+        Show More <i class="fas fa-chevron-down ml-2"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section id="stats" class="py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white px-6">
+    <div class="stat" data-aos="fade-up">
+      <h3 class="text-4xl font-bold text-green-400 flex items-center justify-center gap-2 counter" data-target="5">
+        <i class="fas fa-briefcase"></i> 0+
+      </h3>
+      <p class="text-gray-400">Years of Experience</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-4xl font-bold text-green-400 flex items-center justify-center gap-2 counter" data-target="20">
+        <i class="fas fa-project-diagram"></i> 0+
+      </h3>
+      <p class="text-gray-400">Projects Completed</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-4xl font-bold text-green-400 flex items-center justify-center gap-2 counter" data-target="10">
+        <i class="fas fa-users"></i> 0+
+      </h3>
+      <p class="text-gray-400">Satisfied Clients</p>
+    </div>
+    <div class="stat" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-4xl font-bold text-green-400 flex items-center justify-center gap-2 counter" data-target="3">
+        <i class="fas fa-award"></i> 0+
+      </h3>
+      <p class="text-gray-400">Awards & Recognition</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 container mx-auto px-6">
+  <h2 class="text-4xl font-bold text-center mb-12 text-green-400" data-aos="fade-up">
+    What People Say
+  </h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="p-6 bg-slate-800/50 rounded-xl shadow-md hover:scale-105 transition" data-aos="fade-right">
+      <p class="text-gray-300 mb-4">“Rostom delivered our project ahead of schedule with top-notch quality. Highly recommended!”</p>
+      <h4 class="text-green-400 font-semibold">— Client A</h4>
+    </div>
+    <div class="p-6 bg-slate-800/50 rounded-xl shadow-md hover:scale-105 transition" data-aos="fade-up">
+      <p class="text-gray-300 mb-4">“Brilliant developer with strong Django & AI skills. Great communication throughout.”</p>
+      <h4 class="text-green-400 font-semibold">— Client B</h4>
+    </div>
+    <div class="p-6 bg-slate-800/50 rounded-xl shadow-md hover:scale-105 transition" data-aos="fade-left">
+      <p class="text-gray-300 mb-4">“Creative, professional, and detail-oriented. One of the best developers we’ve worked with.”</p>
+      <h4 class="text-green-400 font-semibold">— Client C</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section id="cta" class="py-20 bg-gradient-to-r from-green-500 to-teal-600 text-center text-white">
+  <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Let’s Build Something Amazing Together</h2>
+  <p class="text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+    Whether it’s a full-stack web app, an AI-powered solution, or a modern portfolio — I’m here to make your vision a reality.
+  </p>
+  <a href="{% url 'contact' %}" class="inline-flex items-center px-8 py-4 rounded-xl bg-black hover:bg-gray-900 font-semibold shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+    <i class="fas fa-paper-plane mr-2"></i> Contact Me
+  </a>
+</section>
+
+<!-- Counter Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Counter animation
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText.replace(/\D/g, "");
+        const increment = Math.ceil(target / 100);
+        if (count < target) {
+          counter.innerHTML = `<i class="${counter.querySelector('i').className}"></i> ${count + increment}+`;
+          setTimeout(updateCount, 40);
+        } else {
+          counter.innerHTML = `<i class="${counter.querySelector('i').className}"></i> ${target}+`;
+        }
+      };
+      updateCount();
+    });
+
+    // Show More toggle
+    const showMoreBtn = document.getElementById("show-more-btn");
+    const extraServices = document.getElementById("extra-services");
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener("click", () => {
+        if (extraServices.classList.contains("hidden")) {
+          extraServices.classList.remove("hidden");
+          showMoreBtn.innerHTML = 'Show Less <i class="fas fa-chevron-up ml-2"></i>';
+        } else {
+          extraServices.classList.add("hidden");
+          showMoreBtn.innerHTML = 'Show More <i class="fas fa-chevron-down ml-2"></i>';
+        }
+      });
+    }
+  });
+</script>
+
+{% endblock %}

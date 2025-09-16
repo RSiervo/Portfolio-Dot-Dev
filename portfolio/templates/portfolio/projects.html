@@ -1,0 +1,120 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Projects — Portfolio{% endblock %}
+{% block content %}
+
+<section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-teal-400 mb-3" data-aos="fade-up">
+      Projects
+    </h2>
+    <p class="text-slate-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="50">
+      Here are some of the projects I’ve worked on — combining design, functionality, and modern development tools.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- File Management System -->
+    <div class="bg-slate-800/50 rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300" data-aos="zoom-in">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold text-white">File Management System</h3>
+        <i class="fas fa-folder-open text-teal-400 text-2xl"></i>
+      </div>
+      <p class="text-slate-300 mb-4">
+        Fully featured Django app with file editing, version control, and role-based permissions.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Django</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">PostgreSQL</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">JavaScript</span>
+      </div>
+      <a href="{% url 'project_detail' slug='file-management-system' %}" 
+         class="inline-block text-teal-400 hover:text-teal-300 font-medium">
+        View details <i class="fas fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+
+    <!-- Medical AI Assistant -->
+    <div class="bg-slate-800/50 rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold text-white">Medical AI Assistant</h3>
+        <i class="fas fa-stethoscope text-teal-400 text-2xl"></i>
+      </div>
+      <p class="text-slate-300 mb-4">
+        AI-assisted image analysis platform with Django frontend and REST backend for healthcare support.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Django</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">REST API</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">AI</span>
+      </div>
+      <a href="{% url 'project_detail' slug='medical-ai-assistant' %}" 
+         class="inline-block text-teal-400 hover:text-teal-300 font-medium">
+        View details <i class="fas fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+
+    <!-- Dr. Tom AI -->
+    <div class="bg-slate-800/50 rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="200">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold text-white">Dr. Tom AI</h3>
+        <i class="fas fa-robot text-teal-400 text-2xl"></i>
+      </div>
+      <p class="text-slate-300 mb-4">
+        A medical assistant powered by <strong>Gemini AI</strong>, providing real-time health insights and recommendations.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Gemini AI</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Python</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Django</span>
+      </div>
+      <a href="{% url 'project_detail' slug='dr-tom-ai' %}" 
+         class="inline-block text-teal-400 hover:text-teal-300 font-medium">
+        View details <i class="fas fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+
+    <!-- Smart POS System -->
+    <div class="bg-slate-800/50 rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="300">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold text-white">Smart POS System</h3>
+        <i class="fas fa-cash-register text-teal-400 text-2xl"></i>
+      </div>
+      <p class="text-slate-300 mb-4">
+        Point of Sale system with AI-powered features for smarter sales, analytics, and inventory management.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Django</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Gemini AI</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">SQLite</span>
+      </div>
+      <a href="{% url 'project_detail' slug='smart-pos-system' %}" 
+         class="inline-block text-teal-400 hover:text-teal-300 font-medium">
+        View details <i class="fas fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+
+    <!-- AFPMBAI Excel Manager -->
+    <div class="bg-slate-800/50 rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="400">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold text-white">AFPMBAI Excel Manager</h3>
+        <i class="fas fa-file-excel text-teal-400 text-2xl"></i>
+      </div>
+      <p class="text-slate-300 mb-4">
+        Asset management system designed for AFPMBAI, streamlining Excel-based workflows into a web platform.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Django</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Excel</span>
+        <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-1 rounded">Bootstrap</span>
+      </div>
+      <a href="{% url 'project_detail' slug='afpmbai-excel-manager' %}" 
+         class="inline-block text-teal-400 hover:text-teal-300 font-medium">
+        View details <i class="fas fa-arrow-right ml-1"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
