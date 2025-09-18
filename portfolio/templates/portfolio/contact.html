@@ -3,31 +3,30 @@
 {% block content %}
 
 <section id="contact" class="relative py-20 px-6 overflow-hidden">
-  <!-- Decorative background glow -->
-  <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 opacity-90"></div>
-  <div class="absolute -top-40 -left-40 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 opacity-95"></div>
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
 
   <div class="relative max-w-6xl mx-auto">
     <!-- Heading -->
-    <div class="text-center mb-14">
+    <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mb-4 animate__animated animate__fadeInDown">
         Let’s Connect
       </h2>
       <p class="text-slate-300 text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
         I’d love to hear from you! Whether it’s about a project, an idea, or just to say hello — 
-        feel free to reach out using the form or via my contact details below.
+        feel free to reach out using the form or my details below.
       </p>
     </div>
 
-    <!-- Contact Content -->
+    <!-- Contact Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       
       <!-- Contact Details -->
       <div class="space-y-8" data-aos="fade-right">
-        <!-- Item -->
         <div class="flex items-center gap-4 group">
-          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30">
+          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30 shadow-md">
             <i class="fas fa-envelope fa-lg"></i>
           </div>
           <div>
@@ -39,7 +38,7 @@
         </div>
 
         <div class="flex items-center gap-4 group">
-          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30">
+          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30 shadow-md">
             <i class="fas fa-phone fa-lg"></i>
           </div>
           <div>
@@ -49,7 +48,7 @@
         </div>
 
         <div class="flex items-center gap-4 group">
-          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30">
+          <div class="bg-teal-500/20 p-4 rounded-xl text-teal-400 transition group-hover:scale-110 group-hover:bg-teal-500/30 shadow-md">
             <i class="fas fa-map-marker-alt fa-lg"></i>
           </div>
           <div>
@@ -74,34 +73,42 @@
 
       <!-- Contact Form -->
       <form method="POST" action="#"
-            class="bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-slate-700 space-y-5 animate__animated animate__fadeInUp"
+            class="bg-slate-800/60 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-slate-700 space-y-5 animate__animated animate__fadeInUp"
             data-aos="fade-left">
         {% csrf_token %}
         
         <div>
           <label class="block text-sm font-semibold mb-2 text-slate-200">Name</label>
           <input type="text" name="name" placeholder="Your name"
-                 class="w-full px-4 py-3 rounded-lg bg-slate-900 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                 class="w-full px-4 py-3 rounded-lg bg-slate-900/70 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none transition">
         </div>
 
         <div>
           <label class="block text-sm font-semibold mb-2 text-slate-200">Email</label>
           <input type="email" name="email" placeholder="you@example.com"
-                 class="w-full px-4 py-3 rounded-lg bg-slate-900 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                 class="w-full px-4 py-3 rounded-lg bg-slate-900/70 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none transition">
         </div>
 
         <div>
           <label class="block text-sm font-semibold mb-2 text-slate-200">Message</label>
           <textarea name="message" rows="5" placeholder="Type your message..."
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none"></textarea>
+                    class="w-full px-4 py-3 rounded-lg bg-slate-900/70 text-slate-200 border border-slate-700 focus:ring-2 focus:ring-teal-500 focus:outline-none transition"></textarea>
         </div>
 
         <button type="submit"
-                class="w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-          <i class="fas fa-paper-plane mr-2"></i> Send Message
+                class="w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 shadow-lg transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
+          <i class="fas fa-paper-plane"></i>
+          <span>Send Message</span>
         </button>
       </form>
     </div>
+  </div>
+
+  <!-- Decorative Wave Divider -->
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+    <svg class="relative block w-full h-12 text-slate-900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path d="M321.39,56.24c58-10.79,114.16-30.13,172-41.86C633.27-3.5,693,1,752.05,16.4c53.57,13.8,104.05,36.68,158,51.25,92.59,25.08,191.27,29.67,284.14,8.08,29.91-6.8,59.33-16,89.13-23.67V0H0V27.35A600.21,600.21,0,0,0,321.39,56.24Z" class="fill-current"></path>
+    </svg>
   </div>
 </section>
 
