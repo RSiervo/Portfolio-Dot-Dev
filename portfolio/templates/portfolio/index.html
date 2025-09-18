@@ -7,32 +7,34 @@
 <section id="home" class="hero py-20 sm:py-24 relative overflow-hidden">
   <div class="max-w-5xl mx-auto text-center relative z-10 px-4">
     <div class="hero-text" data-aos="fade-up">
-      
+
       <!-- NAME -->
       <h1 class="big animate__animated animate__fadeInDown 
-                 text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-snug">
-        Hi, I'm 
-        <span class="bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 bg-clip-text text-transparent whitespace-nowrap">
+                 text-3xl sm:text-5xl md:text-6xl font-extrabold 
+                 mb-4 leading-tight tracking-tight">
+        Hi, I'm <br class="sm:hidden"/>
+        <span class="bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 
+                     bg-clip-text text-transparent whitespace-nowrap">
           ROSTOM A. SIERVO
         </span>
       </h1>
 
       <!-- Designation -->
-      <p class="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide mb-6 
-           text-gray-200 animate__animated animate__fadeInUp 
-           drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+      <p class="text-base sm:text-lg md:text-2xl font-semibold 
+                tracking-wider uppercase mb-8 
+                text-gray-200 animate__animated animate__fadeInUp 
+                drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
         Software Engineer & AI Innovator
       </p>
-
-
 
       <!-- DESCRIPTION -->
       <p class="lead animate__animated animate__fadeInUp animate__delay-1s 
                 text-gray-300 text-sm sm:text-base md:text-xl 
-                max-w-2xl mx-auto mb-8 px-2 sm:px-4 leading-relaxed">
+                max-w-2xl mx-auto mb-10 px-2 sm:px-4 leading-relaxed">
         A passionate <strong>Full-Stack Developer</strong> specializing in 
-        <span class="text-green-400">Django</span>, <span class="text-green-400">Python</span>, 
-        and <strong>modern web technologies</strong>.  
+        <span class="text-green-400">Django</span>, 
+        <span class="text-green-400">Python</span>, and 
+        <strong>modern web technologies</strong>.  
         I craft responsive, elegant, and user-focused digital experiences.
       </p>
 
@@ -40,14 +42,14 @@
       <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 
                   animate__animated animate__fadeInUp animate__delay-2s px-2">
         <a class="flex-1 sm:flex-initial min-w-[180px] inline-flex items-center justify-center 
-                  px-5 py-3 rounded-xl bg-green-500 hover:bg-green-600 
-                  text-white font-semibold shadow-lg transition text-center text-sm sm:text-base"
+                  px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 
+                  text-white font-semibold shadow-lg transition text-center text-base"
            href="{% url 'projects' %}">
           <i class="fas fa-code mr-2"></i> See my projects
         </a>
         <a class="flex-1 sm:flex-initial min-w-[180px] inline-flex items-center justify-center 
-                  px-5 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
-                  text-white font-semibold shadow-lg transition text-center text-sm sm:text-base"
+                  px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
+                  text-white font-semibold shadow-lg transition text-center text-base"
            href="{% url 'contact' %}">
           <i class="fas fa-envelope mr-2"></i> Get in touch
         </a>
@@ -60,9 +62,11 @@
   <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
     <i class="fas fa-code text-7xl sm:text-9xl text-green-400 animate-bounce"></i>
   </div>
+
   <!-- Background Glow -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60"></div>
 </section>
+
 
 <!-- What I Do Section -->
 <section id="services" class="py-16 sm:py-20 bg-gray-900 text-white">
