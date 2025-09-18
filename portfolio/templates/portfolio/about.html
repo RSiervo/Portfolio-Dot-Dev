@@ -42,49 +42,102 @@
   <!-- Skills Section -->
   <div class="mt-16" data-aos="fade-up">
     <h3 class="text-xl font-semibold text-white mb-6 text-center">My Skills</h3>
-
-    <!-- Animation Wrapper -->
     <div class="overflow-hidden relative">
-      <div id="skills-slider" class="flex gap-6 animate-scroll">
-        <!-- Skills will load via API -->
+      <div id="skills-slider" class="flex gap-6 animate-scroll"></div>
+    </div>
+  </div>
+
+  <!-- Work Experience -->
+  <div class="mt-20" data-aos="fade-up">
+    <h3 class="text-xl font-semibold text-white mb-6 text-center">Work Experience</h3>
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <div class="bg-slate-800/50 p-6 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">Software Engineer — Tech Company</h4>
+        <p class="text-slate-300 text-sm italic">2023 – Present</p>
+        <p class="text-slate-300 mt-2">Building scalable applications, integrating AI-driven solutions, and leading small dev teams.</p>
+      </div>
+      <div class="bg-slate-800/50 p-6 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">Full-Stack Developer — Freelance</h4>
+        <p class="text-slate-300 text-sm italic">2021 – 2023</p>
+        <p class="text-slate-300 mt-2">Delivered web apps for startups: e-commerce, dashboards, and custom tools.</p>
       </div>
     </div>
   </div>
 
-  <!-- Experience / Journey -->
+  <!-- Education -->
+  <div class="mt-20" data-aos="fade-up">
+    <h3 class="text-xl font-semibold text-white mb-6 text-center">Educational Attainment</h3>
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <div class="bg-slate-800/50 p-6 rounded-xl shadow-md">
+        <h4 class="text-teal-400 font-semibold">Bachelor of Science in Computer Science</h4>
+        <p class="text-slate-300 text-sm italic">XYZ University, 2018 – 2022</p>
+        <p class="text-slate-300 mt-2">Graduated with honors. Specialized in Artificial Intelligence & Web Development.</p>
+      </div>
+    </div>
+  </div>
+
+   <!-- Certificates & Trainings -->
   <div class="mt-16" data-aos="fade-up">
-    <h3 class="text-xl font-semibold text-white mb-6 text-center">My Journey</h3>
-    <div class="space-y-6 max-w-3xl mx-auto">
-      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
-        <h4 class="text-teal-400 font-semibold">2025 — Present</h4>
-        <p class="text-slate-300">Working on <strong>AI-driven applications</strong> like Dr. Tom AI & Smart POS with Gemini API.</p>
+    <h3 class="text-xl font-semibold text-white mb-6 text-center">Certificates & Training</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for cert in certificates %}
+      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md hover:scale-105 transition cursor-pointer relative group"
+           onclick="openCertificate('{{ cert.image.url }}', '{{ cert.title }}', '{{ cert.description|escapejs }}', '{{ cert.date_received }}')">
+
+        <!-- Show certificate image -->
+        <img src="{{ cert.image.url }}" alt="{{ cert.title }}" class="rounded-lg w-full h-40 object-cover mb-3">
+
+        <!-- Eye Icon Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+          <i class="fas fa-eye text-white text-3xl"></i>
+        </div>
+
+        <h4 class="text-teal-400 font-semibold mb-1">{{ cert.title }}</h4>
+        {% if cert.date_received %}
+          <p class="text-slate-500 text-xs mb-2">Received: {{ cert.date_received }}</p>
+        {% endif %}
+
+        <!-- Animated button -->
+        <button class="mt-2 text-sm text-teal-400 flex items-center gap-2 animate-bounce">
+          <i class="fas fa-arrow-circle-down"></i> See more details
+        </button>
       </div>
-      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
-        <h4 class="text-teal-400 font-semibold">2024</h4>
-        <p class="text-slate-300">Developed full-stack <strong>File Management System</strong> with version control & role-based access.</p>
+      {% empty %}
+      <p class="text-slate-400 text-center col-span-3">No certificates uploaded yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Certificate Modal -->
+  <div id="certificateModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+    <div class="relative bg-slate-900 p-6 rounded-xl max-w-5xl w-full shadow-xl flex flex-col items-center">
+      
+      <!-- Toolbar (zoom + close) -->
+      <div class="absolute top-4 right-4 flex gap-4 text-white text-2xl">
+        <i class="fas fa-search-plus cursor-pointer hover:text-teal-400" onclick="zoomIn()"></i>
+        <i class="fas fa-search-minus cursor-pointer hover:text-teal-400" onclick="zoomOut()"></i>
+        <i class="fas fa-times cursor-pointer hover:text-red-400" onclick="closeCertificate()"></i>
       </div>
-      <div class="bg-slate-800/50 p-4 rounded-xl shadow-md">
-        <h4 class="text-teal-400 font-semibold">Earlier</h4>
-        <p class="text-slate-300">Hands-on experience with <strong>web development, automation, and cloud integration</strong>.</p>
+
+      <h3 id="certificateTitle" class="text-teal-400 font-semibold text-lg mb-2"></h3>
+      <p id="certificateDate" class="text-slate-400 text-sm italic mb-4"></p>
+      <div class="overflow-hidden flex justify-center items-center w-full">
+        <img id="certificateImage" src="" alt="Certificate" class="rounded-lg object-contain transition-transform duration-300 max-h-[75vh]">
       </div>
+      <p id="certificateDescription" class="text-slate-300 text-sm mt-4 text-center"></p>
     </div>
   </div>
 </section>
-
 <!-- Styles -->
 <style>
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-scroll {
-  display: flex;
-  animation: scroll 20s linear infinite; /* adjust speed here */
-  width: max-content;
-}
+.animate-scroll { display: flex; animation: scroll 20s linear infinite; width: max-content; }
 </style>
 
-<!-- Script: Load skills dynamically -->
+<!-- Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const skills = [
@@ -98,15 +151,42 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const slider = document.getElementById("skills-slider");
-
-  // Duplicate the array for smooth infinite loop
-  const allSkills = [...skills, ...skills];
-  allSkills.forEach(skill => {
+  [...skills, ...skills].forEach(skill => {
     const div = document.createElement("div");
     div.className = "bg-slate-800/60 p-4 rounded-xl shadow-md hover:scale-105 transition min-w-[120px] text-center";
     div.innerHTML = `${skill.icon}<p class="text-slate-300 text-sm">${skill.name}</p>`;
     slider.appendChild(div);
   });
 });
+
+let zoomLevel = 1;
+
+function openCertificate(imgSrc, title, description, date) {
+  document.getElementById("certificateImage").src = imgSrc;
+  document.getElementById("certificateTitle").innerText = title;
+  document.getElementById("certificateDescription").innerText = description || "No description available.";
+  document.getElementById("certificateDate").innerText = date ? "Received: " + date : "";
+  document.getElementById("certificateModal").classList.remove("hidden");
+  document.getElementById("certificateModal").classList.add("flex");
+  zoomLevel = 1;
+  document.getElementById("certificateImage").style.transform = "scale(1)";
+}
+
+function closeCertificate() {
+  document.getElementById("certificateModal").classList.add("hidden");
+  document.getElementById("certificateModal").classList.remove("flex");
+}
+
+function zoomIn() {
+  zoomLevel += 0.2;
+  document.getElementById("certificateImage").style.transform = `scale(${zoomLevel})`;
+}
+
+function zoomOut() {
+  if (zoomLevel > 0.4) {
+    zoomLevel -= 0.2;
+    document.getElementById("certificateImage").style.transform = `scale(${zoomLevel})`;
+  }
+}
 </script>
 {% endblock %}
