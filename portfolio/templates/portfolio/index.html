@@ -11,17 +11,18 @@
       <!-- NAME -->
       <h1 class="big animate__animated animate__fadeInDown 
                  text-3xl sm:text-5xl md:text-6xl font-extrabold 
-                 mb-4 leading-tight tracking-tight">
-        Hi, I'm <br class="sm:hidden"/>
+                 mb-4 leading-snug tracking-tight break-words">
+        Hi, I'm
+        <br class="sm:hidden" />
         <span class="bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 
-                     bg-clip-text text-transparent whitespace-nowrap">
+                     bg-clip-text text-transparent">
           ROSTOM A. SIERVO
         </span>
       </h1>
 
       <!-- Designation -->
       <p class="text-base sm:text-lg md:text-2xl font-semibold 
-                tracking-wider uppercase mb-8 
+                tracking-widest uppercase mb-8 
                 text-gray-200 animate__animated animate__fadeInUp 
                 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
         Software Engineer & AI Innovator
@@ -41,13 +42,13 @@
       <!-- CALL TO ACTION BUTTONS -->
       <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 
                   animate__animated animate__fadeInUp animate__delay-2s px-2">
-        <a class="flex-1 sm:flex-initial min-w-[180px] inline-flex items-center justify-center 
+        <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center 
                   px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 
                   text-white font-semibold shadow-lg transition text-center text-base"
            href="{% url 'projects' %}">
           <i class="fas fa-code mr-2"></i> See my projects
         </a>
-        <a class="flex-1 sm:flex-initial min-w-[180px] inline-flex items-center justify-center 
+        <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center 
                   px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
                   text-white font-semibold shadow-lg transition text-center text-base"
            href="{% url 'contact' %}">
