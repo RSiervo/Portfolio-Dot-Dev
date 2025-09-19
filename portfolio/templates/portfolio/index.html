@@ -33,10 +33,10 @@
                     rounded-full"></span>
       </p>
 
-      <!-- DESCRIPTION -->
+      <!-- DESCRIPTION (3 lines max) -->
       <p class="animate__animated animate__fadeInUp animate__delay-1s 
                 text-gray-300 text-base sm:text-lg md:text-xl 
-                max-w-lg mx-auto mb-10 leading-relaxed">
+                max-w-lg mx-auto mb-10 leading-relaxed line-clamp-3">
         A passionate <strong>Full-Stack Developer</strong> specializing in 
         <span class="text-green-400">Django</span>,  
         <span class="text-green-400">Python</span>, and 
@@ -45,18 +45,18 @@
       </p>
 
       <!-- CTA Buttons -->
-      <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 
-                  animate__animated animate__fadeInUp animate__delay-2s">
-        <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center 
-                  px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 
-                  text-white font-semibold shadow-lg transition text-center text-base"
-           href="{% url 'projects' %}">
+      <div class="hero-actions flex flex-row justify-center gap-3 
+                  animate__animated animate__fadeInUp animate__delay-2s flex-wrap">
+        <a class="min-w-[160px] inline-flex items-center justify-center 
+                  px-5 py-3 rounded-xl bg-green-500 hover:bg-green-600 
+                  text-white font-semibold shadow-lg transition text-center text-sm sm:text-base"
+          href="{% url 'projects' %}">
           <i class="fas fa-code mr-2"></i> See my projects
         </a>
-        <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center 
-                  px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
-                  text-white font-semibold shadow-lg transition text-center text-base"
-           href="{% url 'contact' %}">
+        <a class="min-w-[160px] inline-flex items-center justify-center 
+                  px-5 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 
+                  text-white font-semibold shadow-lg transition text-center text-sm sm:text-base"
+          href="{% url 'contact' %}">
           <i class="fas fa-envelope mr-2"></i> Get in touch
         </a>
       </div>
