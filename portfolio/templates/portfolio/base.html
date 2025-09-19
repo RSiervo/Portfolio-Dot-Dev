@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% block title %}Portfolio{% endblock %}</title>
 
+  <link rel="icon" type="image/png" href="{% static 'portfolio/images/RAS_LOGO.png' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -22,6 +23,10 @@
   {% block head %}{% endblock %}
 
   <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden; /* 🔒 Fix horizontal scroll */
+    }
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(180deg, #020617 0%, #061025 100%);
@@ -46,13 +51,12 @@
 
   <!-- NAVIGATION -->
   <nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <div class="max-w-7xl w-full mx-auto px-4 flex items-center justify-between h-16 overflow-hidden">
       
       <!-- Logo -->
-       {% load static %}
       <a href="/" class="flex items-center">
         <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
-             class="h-10 w-auto sm:h-18 md:h-20 transition-all duration-300 hover:scale-105">
+             class="h-10 w-auto sm:h-18 md:h-20 max-w-full transition-all duration-300 hover:scale-105">
       </a>
 
       <!-- Hamburger (mobile) -->
