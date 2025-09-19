@@ -6,23 +6,20 @@
   <title>{% block title %}Portfolio{% endblock %}</title>
 
   {% load static %}
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="{% static 'portfolio/images/RAS_LOGO.png' %}">
-
-  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Tailwind -->
+  <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS & Animations -->
+  <!-- Font Awesome (fixed CDN icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS (scroll animations) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Animate.css -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  
   <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
-
   {% block head %}{% endblock %}
 
   <style>
@@ -81,52 +78,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero py-20 sm:py-24 relative overflow-hidden">
-    <div class="max-w-5xl mx-auto text-center relative z-10 px-4">
-      <div class="hero-text" data-aos="fade-up">
-
-        <!-- NAME -->
-        <h1 class="big animate__animated animate__fadeInDown 
-                   text-3xl sm:text-4xl md:text-6xl font-extrabold 
-                   mb-4 leading-snug tracking-tight">
-          <span class="inline-block text-2xl sm:text-4xl md:text-6xl 
-                       bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 
-                       bg-clip-text text-transparent whitespace-nowrap">
-            ROSTOM A. SIERVO
-          </span>
-        </h1>
-
-        <!-- Designation -->
-        <p class="text-base sm:text-lg md:text-xl font-semibold tracking-wide uppercase mb-8 text-gray-200 animate__animated animate__fadeInUp drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] whitespace-nowrap">
-          Software Engineer & AI Innovator
-        </p>
-
-        <!-- DESCRIPTION -->
-        <p class="animate__animated animate__fadeInUp animate__delay-1s 
-                  text-gray-300 text-base sm:text-lg md:text-xl 
-                  max-w-lg mx-auto mb-10 leading-relaxed">
-          I'm a passionate <strong>freelancer</strong> accepting clients for their projects.  
-          Skilled in <span class="text-green-400">Django</span>,  
-          <span class="text-green-400">Python</span>, and  
-          <strong>modern web technologies</strong>, I craft responsive, elegant, and user-focused digital experiences.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-2s">
-          <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold shadow-lg transition text-center text-base"
-             href="{% url 'projects' %}">
-            <i class="fas fa-code mr-2"></i> See my projects
-          </a>
-          <a class="w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold shadow-lg transition text-center text-base"
-             href="{% url 'contact' %}">
-            <i class="fas fa-envelope mr-2"></i> Get in touch
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- MAIN -->
   <main class="flex-grow">
     {% block content %}{% endblock %}
@@ -153,6 +104,7 @@
     // Toggle for mobile nav
     const navToggle = document.getElementById("nav-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+
     navToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
       if (!mobileMenu.classList.contains("hidden")) {
@@ -162,13 +114,9 @@
       }
     });
 
-    // Active nav link logic (highlight on click + current page)
+    // Active nav link logic
     const navLinks = document.querySelectorAll(".nav-link");
-    const currentPath = window.location.pathname;
     navLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("active");
-      }
       link.addEventListener("click", () => {
         navLinks.forEach(l => l.classList.remove("active"));
         link.classList.add("active");
