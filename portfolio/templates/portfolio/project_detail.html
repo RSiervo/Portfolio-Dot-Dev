@@ -1,16 +1,18 @@
 {% extends 'portfolio/base.html' %}
-{% block title %}{{ project.title }} — Portfolio{% endblock %}
+{% block title %}{{ project.title }} — portfolio{% endblock %}
 {% block content %}
 
 <section class="relative max-w-6xl mx-auto px-6 py-20">
   <!-- Decorative background accents -->
   <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 opacity-95 -z-10"></div>
-  <div class="absolute -top-32 -left-32 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-700"></div>
 
   <!-- Header -->
   <div class="mb-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mb-4 animate__animated animate__fadeInDown">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text 
+               bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 mb-4 
+               animate__animated animate__fadeInDown">
       {{ project.title }}
     </h1>
     <p class="text-slate-300 text-lg max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
@@ -22,25 +24,30 @@
   {% if project.image %}
   <div class="mb-14 relative group" data-aos="zoom-in">
     <img src="{{ project.image.url }}" alt="{{ project.title }}"
-         class="rounded-2xl shadow-2xl w-full object-cover transform transition duration-500 group-hover:scale-[1.02]">
-    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center p-6">
-      <p class="text-slate-200 text-sm italic">Preview of {{ project.title }}</p>
+         class="rounded-2xl shadow-2xl w-full object-cover transform transition duration-500 group-hover:scale-[1.03]">
+    <!-- Overlay -->
+    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/70 via-black/30 to-transparent 
+                opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+      <i class="fas fa-search-plus text-white text-3xl opacity-80"></i>
     </div>
   </div>
   {% endif %}
 
   <!-- Content -->
-  <div class="space-y-10 text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-    <div class="prose prose-invert max-w-none">
+  <div class="space-y-12 text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+    <div class="prose prose-invert max-w-none text-lg tracking-wide">
       {{ project.description|linebreaks }}
     </div>
 
     <!-- Tech Stack -->
     <div>
-      <h3 class="text-2xl font-semibold text-white mb-4">Tech Stack</h3>
+      <h3 class="text-2xl font-semibold text-white mb-5">Tech Stack</h3>
       <ul class="flex flex-wrap gap-3">
         {% for tech in project.stack %}
-        <li class="px-4 py-2 bg-gradient-to-r from-teal-500/30 to-blue-500/30 text-teal-200 text-sm font-medium rounded-xl shadow hover:from-teal-500/40 hover:to-blue-500/40 transition">
+        <li class="px-4 py-2 bg-slate-800/60 border border-teal-500/40 
+                   text-teal-200 text-sm font-medium rounded-xl shadow 
+                   hover:shadow-lg hover:border-teal-400 hover:text-white 
+                   hover:scale-105 transition-all duration-300">
           {{ tech }}
         </li>
         {% endfor %}
@@ -49,14 +56,25 @@
 
     <!-- External Link -->
     {% if project.link %}
-    <div class="pt-6">
+    <div class="pt-8 text-center">
       <a href="{{ project.link }}" target="_blank"
-         class="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-semibold px-7 py-3 rounded-xl shadow-lg transform hover:scale-[1.03] transition-all duration-300">
+         class="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 
+                hover:from-teal-600 hover:to-blue-600 text-white font-semibold px-8 py-3 
+                rounded-xl shadow-xl hover:shadow-teal-500/40 transform hover:scale-105 
+                transition-all duration-300">
         <i class="fas fa-external-link-alt"></i>
         Visit Project
       </a>
     </div>
     {% endif %}
+  </div>
+
+  <!-- Back to Projects -->
+  <div class="mt-16 text-center">
+    <a href="{% url 'projects' %}" 
+       class="inline-flex items-center gap-2 text-slate-400 hover:text-teal-400 transition">
+      <i class="fas fa-arrow-left"></i> Back to Projects
+    </a>
   </div>
 </section>
 

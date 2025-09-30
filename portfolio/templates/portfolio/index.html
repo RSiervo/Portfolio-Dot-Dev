@@ -1,6 +1,6 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-{% block title %}Home — Portfolio{% endblock %}
+{% block title %}rostomdotdev-portfolio{% endblock %}
 {% block content %}
 
 <!-- Hero Section -->
@@ -76,45 +76,71 @@
     <p class="text-gray-400 mb-10 sm:mb-12 text-sm sm:text-base">Crafting digital experiences with passion and precision.</p>
 
     <!-- Services Grid -->
-    <div id="service-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-      <!-- Card 1 -->
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in">
-        <i class="fas fa-laptop-code text-3xl sm:text-4xl text-green-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Web Development</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Responsive and modern websites using Django, Python, and JavaScript.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fas fa-server text-3xl sm:text-4xl text-blue-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Backend Development</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Scalable APIs and secure systems built with Django REST Framework & PostgreSQL.</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-database text-3xl sm:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Database Management</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Optimizing relational databases for speed, security, and performance.</p>
-      </div>
-    </div>
+<div id="service-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+  <!-- Card 1 -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in">
+    <i class="fas fa-laptop-code text-3xl sm:text-4xl text-green-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Web Development</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Responsive and modern websites using Django, Python, and JavaScript.</p>
+  </div>
+  <!-- Card 2 -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+    <i class="fas fa-server text-3xl sm:text-4xl text-blue-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Backend Development</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Scalable APIs and secure systems built with Django REST Framework & PostgreSQL.</p>
+  </div>
+  <!-- Card 3 -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+    <i class="fas fa-database text-3xl sm:text-4xl text-yellow-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Database Management</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Optimizing relational databases for speed, security, and performance.</p>
+  </div>
+  <!-- Card 4 (New) -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+    <i class="fas fa-plug text-3xl sm:text-4xl text-orange-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">API Development</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Creating RESTful & GraphQL APIs for seamless app integrations.</p>
+  </div>
+  <!-- Card 5 (New) -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+    <i class="fas fa-shopping-cart text-3xl sm:text-4xl text-teal-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">E-Commerce Solutions</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Building secure online stores with payment gateway integration.</p>
+  </div>
 
-    <!-- Extra Services -->
-    <div id="extra-services" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 hidden">
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in">
-        <i class="fas fa-cloud text-3xl sm:text-4xl text-purple-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Cloud & DevOps</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Deploying apps with Docker, Kubernetes, and CI/CD pipelines.</p>
-      </div>
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fas fa-robot text-3xl sm:text-4xl text-pink-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">AI & Automation</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Leveraging AI/ML and automation tools to create smart solutions.</p>
-      </div>
-      <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-mobile-alt text-3xl sm:text-4xl text-red-400 mb-3 sm:mb-4"></i>
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Mobile-Friendly Apps</h3>
-        <p class="text-gray-300 text-sm sm:text-base">Crafting responsive apps optimized for mobile experiences.</p>
-      </div>
-    </div>
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
+    <i class="fas fa-shield-alt text-3xl sm:text-4xl text-green-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Cybersecurity</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Protecting apps with security audits, encryption, and monitoring.</p>
+  </div>
+</div>
+
+<!-- Extra Services -->
+<div id="extra-services" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-8 hidden">
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in">
+    <i class="fas fa-cloud text-3xl sm:text-4xl text-purple-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Cloud & DevOps</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Deploying apps with Docker, Kubernetes, and CI/CD pipelines.</p>
+  </div>
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="100">
+    <i class="fas fa-robot text-3xl sm:text-4xl text-pink-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">AI & Automation</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Leveraging AI/ML and automation tools to create smart solutions.</p>
+  </div>
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
+    <i class="fas fa-mobile-alt text-3xl sm:text-4xl text-red-400 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">Mobile-Friendly Apps</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Crafting responsive apps optimized for mobile experiences.</p>
+  </div>
+  <!-- Extra Service 4 (New) -->
+  <div class="p-5 sm:p-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="300">
+    <i class="fas fa-paint-brush text-3xl sm:text-4xl text-yellow-300 mb-3 sm:mb-4"></i>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-2">UI/UX Design</h3>
+    <p class="text-gray-300 text-sm sm:text-base">Designing clean, modern, and user-friendly interfaces.</p>
+  </div>
+  <!-- Extra Service 5 (New) -->
+</div>
+
 
     <!-- Show More Button -->
     <div class="mt-8 sm:mt-10">

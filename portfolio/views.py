@@ -64,9 +64,10 @@ def contact(request):
             send_mail(
                 subject=f"Portfolio Contact from {name}",
                 message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
-                from_email=email,
-                recipient_list=["your-email@example.com"],  # replace with your email
+                from_email="rostomsiervo14@gmail.com",  # use your own domain email
+                recipient_list=["rostomsierv14@gmail.com"]
             )
+
 
             messages.success(request, "Thanks for reaching out! I'll get back to you soon.")
             return redirect("contact")

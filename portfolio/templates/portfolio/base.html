@@ -43,40 +43,45 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-  <!-- NAVIGATION -->
-  <nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
-    <div class="max-w-7xl w-full mx-auto px-4 flex items-center justify-between h-16 overflow-hidden">
-      
-      <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
-             class="h-10 w-auto sm:h-18 md:h-20 max-w-full transition-all duration-300 hover:scale-105">
-      </a>
+<!-- NAVIGATION -->
+<nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl w-full mx-auto px-4 flex items-center justify-between h-16 overflow-hidden">
+    
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
+           class="h-10 w-auto sm:h-18 md:h-20 max-w-full transition-all duration-300 hover:scale-105">
+    </a>
 
-      <!-- Hamburger (mobile) -->
-      <button id="nav-toggle" class="text-white text-2xl md:hidden focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Desktop Links -->
-      <ul id="nav-links" class="hidden md:flex space-x-6 font-medium text-white">
-        <li><a href="/" class="nav-link flex items-center gap-1"><i class="fas fa-home"></i><span>Home</span></a></li>
-        <li><a href="{% url 'about' %}" class="nav-link flex items-center gap-1"><i class="fas fa-user"></i><span>About</span></a></li>
-        <li><a href="{% url 'projects' %}" class="nav-link flex items-center gap-1"><i class="fas fa-code"></i><span>Projects</span></a></li>
-        <li><a href="{% url 'contact' %}" class="nav-link flex items-center gap-1"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-      </ul>
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div id="mobile-menu" class="hidden bg-slate-900/95 px-4 pb-3 max-h-0">
-      <ul class="flex flex-col space-y-2 text-white">
-        <li><a href="/" class="nav-link flex items-center gap-2"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="{% url 'about' %}" class="nav-link flex items-center gap-2"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="{% url 'projects' %}" class="nav-link flex items-center gap-2"><i class="fas fa-code"></i> Projects</a></li>
-        <li><a href="{% url 'contact' %}" class="nav-link flex items-center gap-2"><i class="fas fa-envelope"></i> Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!-- Navigation Links -->
+    <ul class="flex space-x-6 font-medium text-white">
+      <li>
+        <a href="/" class="nav-link flex items-center gap-1">
+          <i class="fas fa-home"></i>
+          <span class="hidden md:inline">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'about' %}" class="nav-link flex items-center gap-1">
+          <i class="fas fa-user"></i>
+          <span class="hidden md:inline">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'projects' %}" class="nav-link flex items-center gap-1">
+          <i class="fas fa-code"></i>
+          <span class="hidden md:inline">Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'contact' %}" class="nav-link flex items-center gap-1">
+          <i class="fas fa-envelope"></i>
+          <span class="hidden md:inline">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
   <!-- MAIN -->
   <main class="flex-grow">
@@ -84,17 +89,52 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-center py-6 mt-6 text-slate-400 text-sm">
-    <div class="flex justify-center space-x-6 mb-3">
-      <a href="https://github.com/RSiervo" target="_blank" class="hover:text-white transition"><i class="fab fa-github fa-lg"></i></a>
-      <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin fa-lg"></i></a>
-      <a href="mailto:rostomdevdotnet@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope fa-lg"></i></a>
-      <a href="https://www.facebook.com/rostomato.me" target="_blank" class="hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
-      <a href="https://instagram.com/rostomato" target="_blank" class="hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
-      <a href="https://tiktok.com/@rostomatoe" target="_blank" class="hover:text-white transition"><i class="fab fa-tiktok fa-lg"></i></a>
+<footer class="bg-slate-900 text-slate-400 mt-12">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      
+      <!-- About -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">About Me</h3>
+        <p class="text-sm leading-relaxed">
+          Hi, I'm <span class="text-green-400">Rostom A. Siervo</span>, a Software Engineer & AI Innovator. 
+          I build scalable apps, AI-driven solutions, and modern digital experiences.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="{% url 'home' %}" class="hover:text-green-400 transition">Home</a></li>
+          <li><a href="{% url 'about' %}" class="hover:text-green-400 transition">About</a></li>
+          <li><a href="{% url 'projects' %}" class="hover:text-green-400 transition">Projects</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-green-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-3">Connect</h3>
+        <div class="flex justify-center md:justify-start space-x-5">
+          <a href="https://github.com/RSiervo" target="_blank" class="hover:text-white hover:scale-110 transition transform"><i class="fab fa-github fa-lg"></i></a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-white hover:scale-110 transition transform"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="mailto:rostomdevdotnet@gmail.com" class="hover:text-white hover:scale-110 transition transform"><i class="fas fa-envelope fa-lg"></i></a>
+          <a href="https://www.facebook.com/rostomdevdotnet" target="_blank" class="hover:text-white hover:scale-110 transition transform"><i class="fab fa-facebook-f fa-lg"></i></a>
+          <a href="https://instagram.com/rostomato" target="_blank" class="hover:text-white hover:scale-110 transition transform"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="https://tiktok.com/@rostomatoe" target="_blank" class="hover:text-white hover:scale-110 transition transform"><i class="fab fa-tiktok fa-lg"></i></a>
+        </div>
+      </div>
+
     </div>
-    <p>&copy; {{ now.year }} Rostom A. Siervo — Software Engineer & AI Innovator!</p>
-  </footer>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-700 mt-10 pt-6 text-center text-sm">
+      <p>&copy; {{ now.year }} 2025 <span class="text-green-400">Rostom A. Siervo</span> — Software Engineer & AI Innovator 🚀</p>
+    </div>
+  </div>  
+</footer>
+
 
   <!-- JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
