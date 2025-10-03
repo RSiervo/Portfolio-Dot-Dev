@@ -25,20 +25,45 @@ PROJECTS = {
     "file-management-system": {
         "title": "File Management System",
         "subtitle": "Django app with editing, version control & permissions",
-        "description": "This project is a full file management platform built with Django...",
+        "description": "Fully featured Django app with file editing, version control, and role-based permissions.",
         "stack": ["Django", "PostgreSQL", "JavaScript"],
         "link": "https://github.com/yourusername/file-management-system",
-        "image": None,  # replace with ImageField later
+        "image": None,
     },
     "medical-ai-assistant": {
         "title": "Medical AI Assistant",
         "subtitle": "AI-assisted image analysis with Django REST API",
-        "description": "This app uses AI to scan medical images...",
-        "stack": ["Django", "REST API", "AI/ML"],
+        "description": "AI-assisted image analysis platform with Django frontend and REST backend for healthcare support.",
+        "stack": ["Django", "REST API", "AI"],
         "link": "https://github.com/yourusername/medical-ai-assistant",
         "image": None,
     },
+    "dr-tom-ai": {
+        "title": "Dr. Tom AI",
+        "subtitle": "Gemini-powered medical assistant",
+        "description": "A medical assistant powered by Gemini AI, providing real-time health insights and recommendations.",
+        "stack": ["Gemini AI", "Python", "Django"],
+        "link": "https://github.com/yourusername/dr-tom-ai",
+        "image": None,
+    },
+    "smart-pos-system": {
+        "title": "Smart POS System",
+        "subtitle": "AI-powered Point of Sale system",
+        "description": "Point of Sale system with AI-powered features for smarter sales, analytics, and inventory management.",
+        "stack": ["Django", "Gemini AI", "SQLite"],
+        "link": "https://github.com/yourusername/smart-pos-system",
+        "image": None,
+    },
+    "afpmbai-excel-manager": {
+        "title": "AFPMBAI Excel Manager",
+        "subtitle": "Excel workflow management platform",
+        "description": "Asset management system designed for AFPMBAI, streamlining Excel-based workflows into a web platform.",
+        "stack": ["Django", "Excel", "Bootstrap"],
+        "link": "https://github.com/yourusername/afpmbai-excel-manager",
+        "image": None,
+    },
 }
+
 
 
 def projects(request):
