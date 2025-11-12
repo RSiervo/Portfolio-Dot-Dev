@@ -19,6 +19,8 @@
   <!-- Animate.css -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1NkE8WcI/Z/i6zLhE+k5e9iXgjbNx0YOVW0lL76i2oNfE0vXxN8sEK3i5Xl/9+Fh2F+2Z/0UghM8Y7G3uW/0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
   {% block head %}{% endblock %}
 
@@ -44,44 +46,57 @@
 <body class="flex flex-col min-h-screen">
 
 <!-- NAVIGATION -->
-<nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
-  <div class="max-w-7xl w-full mx-auto px-4 flex items-center justify-between h-16 overflow-hidden">
-    
-    <!-- Logo -->
-    <a href="/" class="flex items-center">
-      <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
-           class="h-10 w-auto sm:h-18 md:h-20 max-w-full transition-all duration-300 hover:scale-105">
-    </a>
+<nav class="sticky top-0 z-50">
+  <div class="max-w-7xl w-full mx-auto px-4 flex items-center justify-between h-16 relative">
 
-    <!-- Navigation Links -->
-    <ul class="flex space-x-6 font-medium text-white">
-      <li>
-        <a href="/" class="nav-link flex items-center gap-1">
-          <i class="fas fa-home"></i>
-          <span class="hidden md:inline">Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'about' %}" class="nav-link flex items-center gap-1">
-          <i class="fas fa-user"></i>
-          <span class="hidden md:inline">About</span>
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'projects' %}" class="nav-link flex items-center gap-1">
-          <i class="fas fa-code"></i>
-          <span class="hidden md:inline">Projects</span>
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'contact' %}" class="nav-link flex items-center gap-1">
-          <i class="fas fa-envelope"></i>
-          <span class="hidden md:inline">Contact</span>
-        </a>
-      </li>
-    </ul>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex w-full bg-slate-900/80 backdrop-blur-md shadow-md px-4 py-3 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105">
+        <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
+             class="h-10 w-auto sm:h-18 md:h-20 max-w-full">
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="flex space-x-6 font-medium text-white text-base">
+        <li><a href="/" class="flex items-center gap-1 nav-link hover:text-green-400 transition"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'about' %}" class="flex items-center gap-1 nav-link hover:text-green-400 transition"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="{% url 'projects' %}" class="flex items-center gap-1 nav-link hover:text-green-400 transition"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="{% url 'contact' %}" class="flex items-center gap-1 nav-link hover:text-green-400 transition"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Floating Nav -->
+    <div class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-md rounded-full shadow-lg px-4 sm:px-6 py-2 flex items-center space-x-4 z-50 transition-transform duration-300 hover:scale-105">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center transition-transform duration-300 hover:scale-110">
+        <img src="{% static 'portfolio/images/RAS_LOGO.png' %}" alt="Logo"
+             class="h-10 w-auto sm:h-12">
+      </a>
+
+      <!-- Separator -->
+      <span class="text-slate-400 font-semibold text-lg">|</span>
+
+      <!-- Nav Links -->
+      <a href="/" class="text-white hover:text-green-400 transition flex items-center gap-2 text-lg sm:text-xl p-1 sm:p-2 rounded-full hover:bg-slate-800">
+        <i class="fas fa-home"></i>
+      </a>
+      <a href="{% url 'about' %}" class="text-white hover:text-green-400 transition flex items-center gap-2 text-lg sm:text-xl p-1 sm:p-2 rounded-full hover:bg-slate-800">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="{% url 'projects' %}" class="text-white hover:text-green-400 transition flex items-center gap-2 text-lg sm:text-xl p-1 sm:p-2 rounded-full hover:bg-slate-800">
+        <i class="fas fa-code"></i>
+      </a>
+      <a href="{% url 'contact' %}" class="text-white hover:text-green-400 transition flex items-center gap-2 text-lg sm:text-xl p-1 sm:p-2 rounded-full hover:bg-slate-800">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+    </div>
+
   </div>
 </nav>
+
 
   <!-- MAIN -->
   <main class="flex-grow">
@@ -94,15 +109,14 @@
   <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 via-teal-500/10 to-blue-500/10 blur-3xl opacity-20"></div>
 
   <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
 
       <!-- About -->
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">About Me</h3>
         <p class="text-sm leading-relaxed">
           Hi, I'm <span class="text-green-400 font-semibold">Rostom A. Siervo</span>, a Software Engineer & AI Innovator.  
-          I specialize in <span class="text-teal-400">Django</span>, <span class="text-teal-400">Python</span>, and  
-          modern <span class="text-teal-400">AI-powered web apps</span>.
+          I specialize in <span class="text-teal-400">Django</span>, <span class="text-teal-400">Python</span>, and modern <span class="text-teal-400">AI-powered web apps</span>.
         </p>
       </div>
 
@@ -110,10 +124,26 @@
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
         <ul class="space-y-3 text-sm">
-          <li><a href="{% url 'home' %}" class="flex items-center justify-center md:justify-start gap-2 hover:text-green-400 transition"><i class="fas fa-home text-green-400"></i> Home</a></li>
-          <li><a href="{% url 'about' %}" class="flex items-center justify-center md:justify-start gap-2 hover:text-green-400 transition"><i class="fas fa-user text-green-400"></i> About</a></li>
-          <li><a href="{% url 'projects' %}" class="flex items-center justify-center md:justify-start gap-2 hover:text-green-400 transition"><i class="fas fa-code text-green-400"></i> Projects</a></li>
-          <li><a href="{% url 'contact' %}" class="flex items-center justify-center md:justify-start gap-2 hover:text-green-400 transition"><i class="fas fa-envelope text-green-400"></i> Contact</a></li>
+          <li>
+            <a href="{% url 'home' %}" class="flex items-center justify-center sm:justify-start gap-2 hover:text-green-400 transition">
+              <i class="fas fa-home text-green-400"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'about' %}" class="flex items-center justify-center sm:justify-start gap-2 hover:text-green-400 transition">
+              <i class="fas fa-user text-green-400"></i> About
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'projects' %}" class="flex items-center justify-center sm:justify-start gap-2 hover:text-green-400 transition">
+              <i class="fas fa-code text-green-400"></i> Projects
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'contact' %}" class="flex items-center justify-center sm:justify-start gap-2 hover:text-green-400 transition">
+              <i class="fas fa-envelope text-green-400"></i> Contact
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -121,13 +151,13 @@
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center justify-center md:justify-start gap-2">
+          <li class="flex items-center justify-center sm:justify-start gap-2">
             <i class="fas fa-map-marker-alt text-green-400"></i> Quezon City, Philippines
           </li>
-          <li class="flex items-center justify-center md:justify-start gap-2">
+          <li class="flex items-center justify-center sm:justify-start gap-2">
             <i class="fas fa-phone text-green-400"></i> +63 9300 703 129
           </li>
-          <li class="flex items-center justify-center md:justify-start gap-2 break-all">
+          <li class="flex items-center justify-center sm:justify-start gap-2 break-all">
             <i class="fas fa-envelope text-green-400"></i> rostomdevdotnet@gmail.com
           </li>
         </ul>
@@ -136,13 +166,25 @@
       <!-- Social Media -->
       <div>
         <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
-        <div class="flex flex-wrap justify-center md:justify-start gap-4">
-          <a href="https://github.com/RSiervo" target="_blank" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fab fa-github fa-lg"></i></a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fab fa-linkedin fa-lg"></i></a>
-          <a href="mailto:rostomdevdotnet@gmail.com" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fas fa-envelope fa-lg"></i></a>
-          <a href="https://www.facebook.com/rostomdevdotnet" target="_blank" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fab fa-facebook-f fa-lg"></i></a>
-          <a href="https://instagram.com/rostomato" target="_blank" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="https://tiktok.com/@rostomatoe" target="_blank" class="hover:text-green-400 hover:scale-125 transition transform"><i class="fab fa-tiktok fa-lg"></i></a>
+        <div class="flex flex-wrap justify-center sm:justify-start gap-4 mt-1">
+          <a href="https://github.com/RSiervo" target="_blank" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="mailto:rostomdevdotnet@gmail.com" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+          <a href="https://www.facebook.com/rostomdevdotnet" target="_blank" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+          <a href="https://instagram.com/rostomato" target="_blank" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="https://tiktok.com/@rostomatoe" target="_blank" class="hover:text-green-400 hover:scale-110 transition transform">
+            <i class="fab fa-tiktok fa-lg"></i>
+          </a>
         </div>
       </div>
 
@@ -151,8 +193,7 @@
     <!-- Divider -->
     <div class="border-t border-slate-700 mt-12 pt-6 text-center text-sm space-y-4">
       <p class="px-4">
-        &copy; {{ now.year }} 2025 <span class="text-green-400 font-semibold">Rostom Siervo</span> — Software Engineer & AI Innovator 🚀  
-        | All Rights Reserved
+        &copy; {{ now.year }} <span class="text-green-400 font-semibold">Rostom Siervo</span> — Software Engineer & AI Innovator 🚀 | All Rights Reserved
       </p>
       <!-- Back to Top -->
       <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
