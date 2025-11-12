@@ -20,11 +20,12 @@
       <!-- NAME -->
       <h1 class="animate__animated animate__fadeInDown 
                 text-3xl sm:text-5xl md:text-7xl lg:text-8xl 
-                font-extrabold mb-4 sm:mb-6 leading-tight tracking-tight text-center">
+                font-extrabold mb-4 sm:mb-6 leading-tight tracking-tight text-center 
+                whitespace-nowrap overflow-x-auto">
         <span class="inline-block 
                     text-4xl sm:text-6xl md:text-7xl lg:text-8xl 
                     bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 
-                    bg-clip-text text-transparent break-words">
+                    bg-clip-text text-transparent">
           ROSTOM SIERVO
         </span>
       </h1>
@@ -55,14 +56,14 @@
       </p>
 
       <!-- CTA BUTTONS -->
-      <div class="hero-actions flex flex-wrap justify-center gap-3 sm:gap-6 
+      <div class="hero-actions flex flex-row flex-wrap justify-center gap-3 sm:gap-6 
                   animate__animated animate__fadeInUp animate__delay-2s">
 
         <!-- HIRE ME -->
         <a href="{% url 'contact' %}"
            class="inline-flex items-center justify-center 
-                  w-full sm:w-auto min-w-[150px] sm:min-w-[180px] 
-                  px-5 py-3 rounded-xl bg-gradient-to-r from-green-500 to-green-600 
+                  min-w-[140px] sm:min-w-[180px] px-5 py-3 rounded-xl 
+                  bg-gradient-to-r from-green-500 to-green-600 
                   hover:from-green-600 hover:to-green-700
                   text-white font-semibold shadow-md shadow-green-500/30 
                   transition-transform duration-300 hover:scale-105 text-sm sm:text-base">
@@ -73,8 +74,8 @@
         <!-- GET MY RESUME -->
         <a href="{% static 'portfolio/files/Resume_Rostom_Siervo.pdf' %}" download
            class="inline-flex items-center justify-center 
-                  w-full sm:w-auto min-w-[150px] sm:min-w-[180px] 
-                  px-5 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 
+                  min-w-[140px] sm:min-w-[180px] px-5 py-3 rounded-xl 
+                  bg-gradient-to-r from-teal-500 to-blue-600 
                   hover:from-teal-600 hover:to-blue-700
                   text-white font-semibold shadow-md shadow-teal-500/30 
                   transition-transform duration-300 hover:scale-105 text-sm sm:text-base">
@@ -86,6 +87,7 @@
 
     </div>
   </div>
+
 
 
 
